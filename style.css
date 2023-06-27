@@ -58,6 +58,19 @@ font-family: StratosSkyeng;
     border-radius: 12px;
     border: none;
 }
+.choice-button {
+    background-color: #0080C1;
+    color: white;
+    width: 96px;
+    height: 98px;
+    flex-shrink: 0;
+    text-align: center;
+    font-size: 64px;
+font-family: StratosSkyeng;
+    line-height: 72px;
+    border-radius: 12px;
+    border: none;
+}
 .container-start-button {
     display: flex;
     width: 246px;
@@ -69,7 +82,7 @@ font-family: StratosSkyeng;
     background: var(--salad-60, #7AC100);
 
 }
-.start {
+.start-button {
     color: #FFF;
     text-align: center;
     font-size: 24px;
