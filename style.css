@@ -1,13 +1,14 @@
 @font-face {
-  font-family: "StratosSkyeng";
-
-  src: url(./fonts/stratosskyengweb-regular.woff) format("woff");
+  font-family: StratosSkyeng;
+  src: url('./fonts/stratosskyengweb-regular.woff') format("woff");
 }
 
 body {
   background-color: #004980;
   margin: 0;
+  font-family: StratosSkyeng, sans-serif;
 }
+
 .center {
   position: absolute;
   top: 50%;
@@ -26,17 +27,15 @@ body {
   flex-direction: column;
   align-items: center;
 }
+
 .container-text {
   color: #004980;
   font-size: 40px;
-  font-family: StratosSkyeng;
   line-height: 48px;
   text-align: center;
-  padding-top: 12px;
-  padding-bottom: 8px;
-  padding-left: 137px;
-  padding-right: 137px;
+  padding: 12px, 137px, 8px;
 }
+
 .container-level-buttons {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -45,6 +44,7 @@ body {
   padding-left: 70px;
   padding-right: 70px;
 }
+
 .buttons-button {
   color: var(--blue-100, #0080c1);
   background-color: white;
@@ -53,11 +53,12 @@ body {
   flex-shrink: 0;
   text-align: center;
   font-size: 64px;
-  font-family: StratosSkyeng;
+  font-family: StratosSkyeng, sans-serif;
   line-height: 72px;
   border-radius: 12px;
   border: none;
 }
+
 .choice-button {
   background-color: #0080c1;
   color: white;
@@ -66,11 +67,11 @@ body {
   flex-shrink: 0;
   text-align: center;
   font-size: 64px;
-  font-family: StratosSkyeng;
   line-height: 72px;
   border-radius: 12px;
   border: none;
 }
+
 .container-start-button {
   display: flex;
   width: 246px;
@@ -81,24 +82,28 @@ body {
   border-radius: 12px;
   background: var(--salad-60, #7ac100);
 }
+
 .start-button {
   color: #fff;
   text-align: center;
   font-size: 24px;
-  font-family: StratosSkyeng;
+  font-family: StratosSkyeng, sans-serif;
   line-height: 32px;
   background: var(--salad-60, #7ac100);
   border: none;
 }
+
 .cards-container {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 15px;
 }
+
 .card {
   border: none;
   padding: 0;
 }
+
 .header {
   display: flex;
   align-items: center;
@@ -107,12 +112,13 @@ body {
   margin-right: 20%;
   margin-top: 22px;
 }
+
 .header-button {
   width: 246px;
   height: 48px;
   background-color: #7ac100;
   font-size: 24px;
-  font-family: StratosSkyeng;
+  font-family: StratosSkyeng, sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 32px;
@@ -121,29 +127,69 @@ body {
   border: none;
 }
 
-.timer {
+.end-img {
+  padding-top: 26px;
+}
+
+.end-text {
+  font-family: StratosSkyeng, sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 48px;
+  margin: 0;
+  padding-top: 9px;
+  color: #004980;
+}
+
+.text {
+  font-family: StratosSkyeng, sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: 0;
+  text-align: left;
+  height: 32px;
+  margin: 0;
+  padding-top: 28px;
+}
+
+.time-result {
+  height: 72px;
+  padding-bottom: 40px;
+  padding-top: 10px;
+  margin: 0;
   font-weight: 400;
   font-size: 64px;
   line-height: 72px;
 }
-.min-sec,
+
 .timer {
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 72px;
   color: white;
-  font-family: StratosSkyeng;
+  font-family: StratosSkyeng, sans-serif;
   margin: 0;
 }
+
 .min-sec {
   padding-left: 45px;
+  color: white;
+  font-family: StratosSkyeng, sans-serif;
+  margin: 0;
 }
+
 .header-time-name {
   display: flex;
 }
+
 .header-time-box {
   width: 155px;
   height: 91px;
   box-sizing: border-box;
 }
+
 .hiden {
-  opacity: 30%;
+  opacity: 0.3;
   transition: 2s ease;
 }
