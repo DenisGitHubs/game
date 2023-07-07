@@ -193,3 +193,11 @@ body {
   opacity: 0.3;
   transition: 2s ease;
 }
+
+.end-container {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  opacity: 0.9;
+}
