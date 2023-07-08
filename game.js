@@ -1,5 +1,5 @@
 import { levelStr } from "./levelChoice.js";
-
+import { endGame } from "./endGame.js";
 let answer = null;
 let checkRight = 0;
 let timerTablo;
@@ -68,10 +68,10 @@ function hideAndShow(levelChoice) {
           answer = null;
           checkRight++;
           if (checkRight === levelChoice) {
-            alert("Victory ----> меню победы");
             let levelEl = document.querySelector("body");
             levelEl.setAttribute("class", "hiden");
             clearTimeout(t);
+            endGame();
           }
         } else {
           alert("Вы проиграли ---> меню поражения");

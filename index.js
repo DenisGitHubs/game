@@ -1,5 +1,5 @@
 import { levelStr } from "./levelChoice.js";
-
+import "./styles.css";
 window.user = {};
 
 levelStr();
