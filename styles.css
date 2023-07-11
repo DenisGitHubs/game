@@ -196,8 +196,6 @@ body {
 
 .end-container {
   position: absolute;
-  bottom: 100%;
-  left: 0;
-  right: 0;
-  opacity: 0.9;
+  top: 50%;
+  left: 50%;
 }

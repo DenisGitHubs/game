@@ -1,15 +1,19 @@
 import { levelStr } from "./levelChoice.js";
 import { endGame } from "./endGame.js";
-let answer = null;
-let checkRight = 0;
+let answer;
+let checkRight;
 let timerTablo;
 let sec = 0;
 let min = 0;
 let t;
-let buttonTime = 5;
+let buttonTime;
 let button;
 
 export function goGame(cardRandomMass, levelChoice) {
+  checkRight = 0;
+  answer = null;
+  buttonTime = 5;
+  clearTimeout(t);
   let levelEl = document.querySelector("body");
   let levelHtml = `
     <header class="header"><div class="header-time-box"><div class="header-time-name"><p class="min-sec">min</p><p class="min-sec">sec</p></div><h1 class="timer"><time class="timer">00:00</time></h1></div><button class="header-button">5</button></header>
@@ -61,6 +65,7 @@ function hideAndShow(levelChoice) {
         return;
       }
       function gameClick() {
+        let win;
         card.setAttribute("src", oldSrc);
         if (answer === null) {
           answer = oldSrc;
@@ -68,16 +73,22 @@ function hideAndShow(levelChoice) {
           answer = null;
           checkRight++;
           if (checkRight === levelChoice) {
-            let levelEl = document.querySelector("body");
-            levelEl.setAttribute("class", "hiden");
+            win = true;
+            window.user.win = win;
+            window.user.time =
+              (min > 9 ? min : "0" + min) + ":" + (sec > 9 ? sec : "0" + sec);
+            hidenWhenEnd();
             clearTimeout(t);
-            endGame();
+            endGame(min, sec, win);
           }
         } else {
-          alert("Вы проиграли ---> меню поражения");
-          let levelEl = document.querySelector("body");
-          levelEl.setAttribute("class", "hiden");
+          win = false;
+          window.user.time =
+            (min > 9 ? min : "0" + min) + ":" + (sec > 9 ? sec : "0" + sec);
+          window.user.win = win;
+          hidenWhenEnd();
           clearTimeout(t);
+          endGame(min, sec, win);
         }
       }
     });
@@ -120,13 +131,9 @@ function goBackButton(cardRandomMass) {
     levelStr();
   });
 }
-
-// function victory() {
-//     let click = document.querySelector('header');
-//     click.addEventListener("click", () => {
-//         let levelEl = document.querySelector('body');
-//         levelEl.setAttribute('class', 'hiden');
-//         clearTimeout(t)
-//     })
-
-// }
+function hidenWhenEnd() {
+  document.querySelector("header").setAttribute("class", "hiden header");
+  document
+    .getElementsByClassName("cards-container")[0]
+    .setAttribute("class", "hiden cards-container center");
+}
