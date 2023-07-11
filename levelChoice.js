@@ -55,10 +55,9 @@ function startButton() {
     }
 
     cardRandomMass.splice(0, 18);
-    window.user.level = levelChoice;
+    window.user.level = levelChoice / 3;
     randomCards(levelChoice, allCardsMass);
     cardRandomMass.push.apply(cardRandomMass, cardRandomMass);
-
     shuffle(cardRandomMass);
     goGame(cardRandomMass, levelChoice);
   });
